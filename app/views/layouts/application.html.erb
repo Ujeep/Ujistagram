@@ -2,13 +2,29 @@
 <html>
 <head>
   <title>Ujistagram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="normalize.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <ul>
+      <li><%= link_to "Ujistagram",root_path %></li>
+      <li><%= link_to photos_path do%>
+  <i class="fa fa-camera-retro fa-2x"></i>
+<% end %>
+</li>
+    </ul>
+  </header>
 
 <%= yield %>
+
+<footer>
+  <p>運営会社UJEEP株式会社</p>
+  <p>© 2017-5 Copyright DIVE INTO CODE UJI Corp.</p>
+</footer>
 
 </body>
 </html>

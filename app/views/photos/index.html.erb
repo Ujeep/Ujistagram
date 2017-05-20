@@ -1,11 +1,19 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+
 <p><%= notice %></p>
 <h1>Ujistagram</h1>
 
+<%=link_to"Photos",new_photo_path,class: 'btn btn-default' %>
 <% @photos.each do |photo| %>
-  <p>タイトル:<%= photo.title %></p>
+ <div class="row">
+  <h4><strong>タイトル:<%= photo.title %></strong></h4>
   <p>本文:<%= photo.content %></p>
-  <%=link_to"edit",edit_photo_path(photo.id)%>
-  <%=link_to"delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に編集していいですか？"}%>
+  <%=link_to"edit",edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
+  <%=link_to"delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に編集していいですか？"}, class:'btn btn-default btn-sm btn btn-danger'%>
+</div>
 <% end %>
 
-<%=link_to"Photos",new_photo_path %>
+</div>
+</div>
