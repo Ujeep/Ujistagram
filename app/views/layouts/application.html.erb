@@ -3,7 +3,6 @@
 <head>
   <title>Ujistagram</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="normalize.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,9 +12,15 @@
     <ul>
       <li><%= link_to "Ujistagram",root_path %></li>
       <li><%= link_to photos_path do%>
-  <i class="fa fa-camera-retro fa-2x"></i>
+        <i class="fa fa-camera-retro fa-2x"></i>
 <% end %>
-</li>
+        <% if user_signed_in? %>
+  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+<% else %>
+  <li><%= link_to 'ログイン', new_user_session_path  %></li>
+  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+<% end %>
+      </li>
     </ul>
   </header>
 

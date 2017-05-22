@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
+before_action :authenticate_user!
 before_action :set_photo, only: [:edit, :update, :destroy]
-
  def index
    @photos = Photo.all
  end
@@ -11,6 +11,7 @@ before_action :set_photo, only: [:edit, :update, :destroy]
 
  def create
    @photo = Photo.new(photos_params)
+   @photo.user_id = current_user.id
    if @photo.save
    redirect_to photos_path,notice:"ブログが作成されました！"
 else

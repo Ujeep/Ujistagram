@@ -5,13 +5,15 @@
 <p><%= notice %></p>
 <h1>Ujistagram</h1>
 
-<%=link_to"Photos",new_photo_path,class: 'btn btn-default' %>
+<p><%=link_to"Photos",new_photo_path,class: 'btn btn-default' %></p>
+
 <% @photos.each do |photo| %>
- <div class="row">
-  <h4><strong>タイトル:<%= photo.title %></strong></h4>
-  <p>本文:<%= photo.content %></p>
-  <%=link_to"edit",edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
-  <%=link_to"delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に編集していいですか？"}, class:'btn btn-default btn-sm btn btn-danger'%>
+<p>User:<%= photo.user.name%></p>
+  <p>Title:<%= photo.title %></p>
+  <p>Hash:<%= photo.content %></p>
+  <div id ="edit">
+  <%=link_to"Edit",edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
+  <%=link_to"Delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に編集していいですか？"}, class:'btn btn-default btn-sm btn btn-danger'%>
 </div>
 <% end %>
 
