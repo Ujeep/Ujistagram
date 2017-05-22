@@ -14,6 +14,7 @@ before_action :set_photo, only: [:edit, :update, :destroy]
    @photo.user_id = current_user.id
    if @photo.save
    redirect_to photos_path,notice:"ブログが作成されました！"
+   NoticeMailer.sendmail_photo(@photo).deliver
 else
   render "new"
  end
