@@ -44,9 +44,19 @@ group :development do
  gem 'letter_opener_web'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 gem 'twitter-bootstrap-rails'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem 'rails_admin'
+gem 'cancan'
+gem 'activeresource'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'carrierwave'
+gem 'rmagick'
