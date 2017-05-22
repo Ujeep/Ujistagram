@@ -8,7 +8,7 @@ class NoticeMailer < ApplicationMailer
   def sendmail_photo(photo)
    @photo = photo
 
-    mail to: @contact.email,
-     subject: '【UJISTAGRAM】Photo has posted'
+    mail to: photo.user.email,
+    subject: 'photo'
   end
 end
