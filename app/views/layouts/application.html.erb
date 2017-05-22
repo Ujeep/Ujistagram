@@ -11,8 +11,9 @@
   <header>
     <ul>
       <li><%= link_to "Ujistagram",root_path %></li>
-      <li><%= link_to photos_path%>
-
+      <li><%= link_to photos_path do%>
+<i class="fa fa-camera-retro fa-2x"></i>
+<% end %>
         <% if user_signed_in? %>
   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
 <% else %>
