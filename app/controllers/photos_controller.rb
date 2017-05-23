@@ -13,7 +13,7 @@ before_action :set_photo, only: [:edit, :update, :destroy]
    @photo = Photo.new(photos_params)
    @photo.user_id = current_user.id
    if @photo.save
-     redirect_to photos_path,notice:"ブログが作成されました！"
+     redirect_to photos_path,notice:"写真がアップロードされました"
     NoticeMailer.sendmail_photo(@photo).deliver
    else
     render "new"
@@ -38,7 +38,7 @@ end
 
 private
 def photos_params
-  params.require(:photo).permit(:title,:content,:image)
+  params.require(:photo).permit(:hash,:image)
 end
 
 def set_photo
