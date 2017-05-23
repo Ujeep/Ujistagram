@@ -1,19 +1,21 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
 
-
 <p><%= notice %></p>
 <h1>Ujistagram</h1>
 
 <p><%=link_to"Photos",new_photo_path,class: 'btn btn-default' %></p>
 
 <% @photos.each do |photo| %>
+<div class="row">
 <p>User:<%= photo.user.name%></p>
   <p>Title:<%= photo.title %></p>
-  <p>Hash:<%= photo.content %></p>
+  <p>#<%= photo.content %></p>
+    <%= image_tag photo.image.url %>
   <div id ="edit">
   <%=link_to"Edit",edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
   <%=link_to"Delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に編集していいですか？"}, class:'btn btn-default btn-sm btn btn-danger'%>
+</div>
 </div>
 <% end %>
 
