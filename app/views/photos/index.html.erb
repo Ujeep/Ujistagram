@@ -9,12 +9,12 @@
 <% end %></p>
 <% @photos.each do |photo| %>
 <div class="row">
-<p>#<%= photo.user.name%></p>
+<p><%= photo.user.name%></p>
 <p><%= image_tag photo.image.url %></p>
-<p><%= photo.hash%></p>
+<p>#<%= photo.content%></p><br />
   <div id ="edit">
-  <%=link_to"Edit",edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
-  <%=link_to"Delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に削除していいですか？"}, class:'btn btn-default btn-sm btn btn-danger'%>
+  <%=link_to"Edit",edit_photo_path(photo.id), class: 'btn btn-default'  %>
+  <%=link_to"Delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に削除していいですか？"}, class: 'btn btn-default' %>
 </div>
 </div>
 <% end %>
