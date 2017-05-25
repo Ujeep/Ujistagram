@@ -2,25 +2,25 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_for(@photo) do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @photo.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<% if @photo.errors.any? %>
+<div id="error_explanation">
+  <h2><%= @photo.errors.count %>件のエラーがあります。</h2>
+  <ul>
+    <% @photo.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 
 <div class="image"><i class="fa fa-camera-retro fa-3x"></i></div>
 <div class="image"><%= f.file_field :image %></div>
 <%= f.hidden_field :image_cache %>
-  <p><%= f.label :"write a caption"%></p>
-  <%= f.text_field :content,class: 'form-control' %>
-  <br>
+<p><%= f.label :"write a caption"%></p>
+<%= f.text_field :content,class: 'form-control' %>
+<br>
 
-  <%= f.submit'submit',class: 'btn btn-primary btn-block' %>
+<%= f.submit'submit',class: 'btn btn-primary btn-block' %>
 <% end %>
 
 <%= link_to"All Photos",photos_path %>

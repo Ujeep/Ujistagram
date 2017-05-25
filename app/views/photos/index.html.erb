@@ -1,25 +1,25 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
 
-<p><%= notice %></p>
-<h1>UJISTAGRAM</h1>
+    <p><%= notice %></p>
+    <h1>UJISTAGRAM</h1>
 
-<p><%= link_to new_photo_path do%>
-<i class="fa fa-camera-retro fa-4x"></i>
-<% end %></p>
-<% @photos.each do |photo| %>
-<div class="row">
-<p><%= photo.user.name%></p>
-<p><%= image_tag photo.image.url %></p>
-<p>#<%= photo.content%></p><br />
-  <div id ="edit">
-  <%=link_to"Edit",edit_photo_path(photo.id), class: 'btn btn-default'  %>
-  <%=link_to"Delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に削除していいですか？"}, class: 'btn btn-default' %>
-</div>
-</div>
-<% end %>
-<div id="page-top-btn" class="page-top-btn">
-    <p><a class="move-page-top" id="move-page-top">▲</a></p>
-</div>
-</div>
-</div>
+    <p><%= link_to new_photo_path do%>
+      <i class="fa fa-camera-retro fa-4x"></i>
+      <% end %></p>
+      <% @photos.each do |photo| %>
+      <div class="row">
+        <p><%= photo.user.name%></p>
+        <p><%= image_tag photo.image.url %></p>
+        <p>#<%= photo.content%></p><br />
+        <div id ="edit">
+          <%=link_to"Edit",edit_photo_path(photo.id), class: 'btn btn-default'  %>
+          <%=link_to"Delete",photo_path(photo.id),method: :delete,data:{confirm:"本当に削除していいですか？"}, class: 'btn btn-default' %>
+        </div>
+      </div>
+      <% end %>
+      <div id="page-top-btn" class="page-top-btn">
+        <p><a class="move-page-top" id="move-page-top">▲</a></p>
+      </div>
+    </div>
+  </div>
