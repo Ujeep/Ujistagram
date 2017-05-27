@@ -34,7 +34,7 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
-config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/ 
+config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Specifies the header that your server uses for sending files.
@@ -77,7 +77,7 @@ config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-config.action_mailer.default_url_options = { host: 'https://warm-headland-59883.herokuapp.com/' }
+config.action_mailer.default_url_options = { host: 'https://thawing-caverns-86703.herokuapp.com/' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
   {
